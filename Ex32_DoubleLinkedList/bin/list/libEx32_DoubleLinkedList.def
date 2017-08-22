@@ -1,0 +1,11 @@
+EXPORTS
+    List_clear @1
+    List_clear_destroy @2
+    List_create @3
+    List_destroy @4
+    List_pop @5
+    List_push @6
+    List_remove @7
+    List_shift @8
+    List_unshift @9
+    _get_output_format @10

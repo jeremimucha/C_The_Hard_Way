@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1471257667 source:c:\_c_thehardway\ex32_doublelinkedlist\list.c
+	"list.h"
+	"debug.h"
+
+1471257654 c:\_c_thehardway\ex32_doublelinkedlist\list.h
+	<stdlib.h>
+
+1471257708 c:\_c_thehardway\ex32_doublelinkedlist\debug.h
+	<stdio.h>
+	<errno.h>
+	<string.h>
+
+1471258626 source:c:\_c_thehardway\ex32_doublelinkedlist\list_tests.c
+	"minunit.h"
+	"list.h"
+	<assert.h>
+
+1471258258 c:\_c_thehardway\ex32_doublelinkedlist\minunit.h
+	<stdio.h>
+	"debug.h"
+	<stdlib.h>
+

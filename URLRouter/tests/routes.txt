@@ -1,0 +1,5 @@
+/hello Hello
+/hello/ Hello
+/signup Signup
+/logout Logout
+/album/ Album

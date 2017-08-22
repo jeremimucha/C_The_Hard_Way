@@ -1,0 +1,6 @@
+EXPORTS
+    _get_output_format @1
+    fail_on_purpose @2
+    lowercase @3
+    print_a_message @4
+    uppercase @5

@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1471086268 source:c:\_c_thehardway\ex29_libraries_and_linking\libex29.c
+	<stdio.h>
+	<ctype.h>
+	"debug.h"
+
+1470567474 c:\_c_thehardway\ex29_libraries_and_linking\debug.h
+	<stdio.h>
+	<errno.h>
+	<string.h>
+

@@ -1,0 +1,43 @@
+1. An object is referred to outside of its lifetime (6.2.4).
+    The value of a pointer to an object whose lifetime has ended is used (6.2.4).
+    The value of an object with automatic storage duration is used while it is indeterminate (6.2.4, 6.7.8, 6.8).
+2. Conversion to or from an integer type produces a value outside the range that can be represented (6.3.1.4).
+     Demotion of one real floating type to another produces a value outside the range that can be represented (6.3.1.5).
+3. Two declarations of the same object or function specify types that are not compatible (6.2.7).
+4. An lvalue having array type is converted to a pointer to the initial element of the array, and the array object has register storage class (6.3.2.1).
+     An attempt is made to use the value of a void expression, or an implicit or explicit conversion (except to void) is applied to a void expression (6.3.2.2).
+     Conversion of a pointer to an integer type produces a value outside the range that can be represented (6.3.2.3).
+     Conversion between two pointer types produces a result that is incorrectly aligned (6.3.2.3).
+     A pointer is used to call a function whose type is not compatible with the pointed-to type (6.3.2.3).
+     The operand of the unary * operator has an invalid value (6.5.3.2).
+     A pointer is converted to other than an integer or pointer type (6.5.4).
+     Addition or subtraction of a pointer into, or just beyond, an array object and an integer type produces a result that does not point into, or just beyond, the same array object (6.5.6).
+     Addition or subtraction of a pointer into, or just beyond, an array object and an integer type produces a result that points just beyond the array object and is used as the operand of a unary * operator that is evaluated (6.5.6).
+     Pointers that do not point into, or just beyond, the same array object are subtracted (6.5.6).
+     An array subscript is out of range, even if an object is apparently accessible with the given subscript (as in the lvalue expression a[1][7] given the declaration int a[4][5]) (6.5.6).
+     The result of subtracting two pointers is not representable in an object of type ptrdiff_t(6.5.6).
+     Pointers that do not point to the same aggregate or union (nor just beyond the same array object) are compared using relational operators (6.5.8).
+     An attempt is made to access, or generate a pointer to just past, a flexible array member of a structure when the referenced object provides no elements for that array (6.7.2.1).
+     Two pointer types that are required to be compatible are not identically qualified, or are not pointers to compatible types (6.7.5.1).
+     The size expression in an array declaration is not a constant expression and evaluates at program execution time to a nonpositive value (6.7.5.2).
+     The pointer passed to a library function array parameter does not have a value such that all address computations and object accesses are valid (7.1.4).
+5. The program attempts to modify a string literal (6.4.5).
+6. An object has its stored value accessed other than by an lvalue of an allowable type (6.5).
+7. An attempt is made to modify the result of a function call, a conditional operator, an assignment operator, or a comma operator, or to access it after the next sequence point (6.5.2.2, 6.5.15, 6.5.16, 6.5.17).
+8. The value of the second operand of the / or % operator is zero (6.5.5).
+9. An object is assigned to an inexactly overlapping object or to an exactly overlapping object with incompatible type (6.5.16.1).
+10. A constant expression in an initializer is not, or does not evaluate to, one of the following: an arithmetic constant expression, a null pointer constant, an address constant, or an address constant for an object type plus or minus an integer constant expression (6.6).
+     An arithmetic constant expression does not have arithmetic type; has operands that are not integer constants, floating constants, enumeration constants, character constants, or sizeof expressions; or contains casts (outside operands to sizeof operators) other than conversions of arithmetic types to arithmetic types (6.6).
+11. An attempt is made to modify an object defined with a const-qualified type through use of an lvalue with non-const-qualified type (6.7.3).
+12. A function with external linkage is declared with an inline function specifier, but is not also defined in the same translation unit (6.7.4).
+13. The value of an unnamed member of a structure or union is used (6.7.8).
+14. The } that terminates a function is reached, and the value of the function call is used by the caller (6.9.1).
+15. A file with the same name as one of the standard headers, not provided as part of the implementation, is placed in any of the standard places that are searched for included source files (7.1.2).
+16. The value of an argument to a character handling function is neither equal to the value of EOF nor representable as an unsigned char (7.4).
+17. The value of the result of an integer arithmetic or conversion function cannot be represented (7.8.2.1, 7.8.2.2, 7.8.2.3, 7.8.2.4, 7.20.6.1, 7.20.6.2, 7.20.1).
+18. The value of a pointer to a FILE object is used after the associated file is closed (7.19.3).
+     The stream for the fflush function points to an input stream or to an update stream in which the most recent operation was input (7.19.5.2).
+     The string pointed to by the mode argument in a call to the fopen function does not exactly match one of the specified character sequences (7.19.5.3).
+     An output operation on an update stream is followed by an input operation without an intervening call to the fflush function or a file positioning function, or an input operation on an update stream is followed by an output operation with an intervening call to a file positioning function (7.19.5.3).
+19. A conversion specification for a formatted output function uses a # or 0 flag with a conversion specifier other than those described (7.19.6.1, 7.24.2.1). * An s conversion specifier is encountered by one of the formatted output functions, and the argument is missing the null terminator (unless a precision is specified that does not require null termination) (7.19.6.1, 7.24.2.1). * The contents of the array supplied in a call to the fgets, gets, or fgetws function are used after a read error occurred (7.19.7.2, 7.19.7.7, 7.24.3.2).
+20. A non-null pointer returned by a call to the calloc, malloc, or realloc function with a zero requested size is used to access an object (7.20.3). * The value of a pointer that refers to space deallocated by a call to the free or realloc function is used (7.20.3). * The pointer argument to the free or realloc function does not match a pointer earlier returned by calloc, malloc, or realloc, or the space has been deallocated by a call to free or realloc (7.20.3.2, 7.20.3.4).
